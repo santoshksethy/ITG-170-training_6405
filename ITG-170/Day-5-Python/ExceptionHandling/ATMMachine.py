@@ -17,11 +17,8 @@ class InvalidChoiceError(Exception):
 
 class Account:
     def __init__(self, name, age, password,amount):
-
         if len(password) < 6:
-            raise InvalidPassword(
-                'Password must contain at least 6 characters'
-            )
+            raise InvalidPassword('Password must contain at least 6 characters')
         self.name = name
         self.age = age
         self.password = password
@@ -34,8 +31,8 @@ try:
     account= Account(name,age,password,amount)
     print(f'Your account created with a/c number:  {random.randint(1,999999999999)}')
     flag=True
-    while(True):
-        print('1. Deposit\n2.Withdraw\n3.Exit')
+    while(flag):
+        print('1.Deposit\n2.Withdraw\n3.Exit')
         option= int(input('Enter your option: '))
         if option==1:
             amount=int(input('Enter your amount: '))
@@ -62,7 +59,3 @@ try:
             raise InvalidChoiceError('Invalid option')
 except (InvalidPassword,ValueError,Exception) as e:
     print(e)
-    try:
-        raise e
-    except Exception as e:
-        print(e)
