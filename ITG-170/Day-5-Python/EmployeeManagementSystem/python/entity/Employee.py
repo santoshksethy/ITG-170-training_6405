@@ -7,4 +7,4 @@ class Employee:
         self.salary = salary
 
     def __str__(self):
-        return f'{self.name} is working as {self.role} with age of {self.age} holding id-number of {self.id}'
+        return f'id: {self.id}, name: {self.name},  role: {self.role}, age: {self.age}'

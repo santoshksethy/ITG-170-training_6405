@@ -10,11 +10,29 @@ from entity.Trainer import Trainer
 from exceptions.OutOfMemoryException import OutOfMemoryException
 from service.EmployeeService import EmployeeService
 
-print('Welcome to Miracle software systems!')
-flag= True
+
 try:
     employeeService = EmployeeService()
-    while (flag):
+    employee= Employee()
+    loggedIn = False
+    attempts = 3
+    try:
+        while attempts > 0:
+            empId = input('Enter your id : ').lower()
+            empName = input('Enter your name : ').lower()
+            emp = employeeService.login(int(empId), empName)
+            if emp is not None:
+                loggedIn = True
+                employee = emp
+                print(f'Welcome to Employee Management Systems, {emp.name}')
+                break
+            else:
+                loggedIn = False
+                attempts -= 1
+                print(f'You have entered wrong credentials, chances left: {attempts}')
+    except Exception as ex:
+        print(ex)
+    while (loggedIn ==True):
         print('1.Add Employee\n2.Update Employee\n3.Delete Employee\n4.Fetch all Trainees\n5.Fetch all HRs\n6.Fetch all Trainers\n7.Exit\n')
         choice = int(input('Enter a choice: '))
         match choice:
@@ -87,15 +105,10 @@ try:
                     print(e)
 
             case 7:
-                flag = False
+                loggedIn = False
                 print('Thank you for your time')
                 break
             case _:
                 print('Enter a valid choice')
-
-
-        
-                
 except Exception as e:
     print(e)
-

@@ -41,9 +41,7 @@ class EmployeeService:
 
                     return f'Employee record saved successfully with {employee.id}'
 
-        raise InvalidAuthorizationException(
-            'Contact your HR for creating employee'
-        )
+        raise InvalidAuthorizationException('Contact your HR for creating employee')
 
     def deleteEmployee(self, id):
 
@@ -70,9 +68,7 @@ class EmployeeService:
                     return
 
                 else:
-                    raise InvalidAuthorizationException(
-                        'Contact your HR for deleting employee'
-                    )
+                    raise InvalidAuthorizationException('Contact your HR for deleting employee')
 
     def getAllTrainees(self):
         count=0
@@ -114,3 +110,11 @@ class EmployeeService:
                 count+=1
         if count==1:
             raise EmployeeNotExistException('There is no trainer as of now!!!')
+
+    def login(self,id,name):
+        for emp in self.employees:
+            if emp.id == id and emp.name.lower() == name.lower():
+                return emp
+
+        return None
+
