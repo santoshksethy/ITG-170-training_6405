@@ -1,4 +1,4 @@
-# Assignment Tasks
+# Assignment Task1
 # Create a module named math_utils.py with a function to add two numbers. Import and use it.
 import math_utils
 result = math_utils.add(5, 10)

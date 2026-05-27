@@ -174,7 +174,7 @@ print("\nTemperature in Fahrenheit :", fahrenheit)
 
 # ================= END =================
 
-print("\nPython Day 1 Tasks Completed Successfully")
+print("\nPython Day 1 Task1 Completed Successfully")
 
 print("Employee Name : Geetha Gangabattula")
 
