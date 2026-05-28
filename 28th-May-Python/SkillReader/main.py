@@ -6,7 +6,6 @@ import os
 load_dotenv()
 app = FastAPI()
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 SKILLS = [
     "python", "java", "sql", "aws", "docker",
     "machine learning", "deep learning", "react",
