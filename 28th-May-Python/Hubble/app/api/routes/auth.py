@@ -1,7 +1,13 @@
 from fastapi import APIRouter, HTTPException
-from ....app.schemas.auth import LoginSchema
-from ....app.services.auth_service import authenticate_user
+
 from ....app.core.jwt import create_access_token
+from ....app.schemas.employee import EmployeeCreate, EmployeeUpdate
+from ....app.services.employee_service import create_employee, update_employee
+from ..dependencies import get_current_user, require_role
+
+from ....app.schemas.auth import LoginSchema
+
+from services.auth_service import authenticate_user
 
 router = APIRouter()
 

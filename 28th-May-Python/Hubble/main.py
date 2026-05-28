@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from api.routes import auth, employee
-from core.exceptions import global_exception_handler
+from app.api.routes import auth, employee
+from app.core.exceptions import global_exception_handler
 
 app = FastAPI(title="Hubble HR System")
 
