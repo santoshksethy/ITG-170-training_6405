@@ -202,7 +202,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES=60
 ## Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/santoshksethy/ITG-170-training_6405/tree/SantoshKumarSethy_6405
+cd 1st-June-Python
 cd Smart-Task-File-Processing-API
 ```
 
