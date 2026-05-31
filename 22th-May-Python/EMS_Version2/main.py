@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 
-app = FastAPI('Employe management system version2')
+app = FastAPI('Employe management system version 2')
 
 routers=[]
 
